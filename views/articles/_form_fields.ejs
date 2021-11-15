@@ -1,0 +1,16 @@
+<div class="form-group">
+  <label for="title">Enter your name</label>
+  <input required value="<%= article.title %>" type="text" name="title" id="title" class="form-control">
+</div>
+<div class="form-group">
+  <label for="description">Your Address/Location</label>
+ 
+  <textarea name="description" id="description" class="form-control mb-4 mt-4"><%= article.description%></textarea>
+</div>
+<div class="form-group">
+  <label for="markdown">Your Birthday Wishes and Messages to Priscilla</label>
+  <textarea required name="markdown" id="markdown" class="form-control"><%= article.markdown %></textarea>
+</div>
+
+<a href="/" class="btn btn-secondary">Cancel</a>
+<button type="submit" class="btn btn-primary">Save</button>

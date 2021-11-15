@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Birthday Blog</title>
+</head>
+<body style="background-color: rgb(2, 33, 49);">
+  <h1 class="mb-4" style="text-align: center; color: rgb(221, 221, 214); font-size: 400%; font-family: cursive;">Birthday Blog</h1>
+  <i><p style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; font-size: 200%; color: #eebc17; text-align: center;">Hello Everyone, this is coming Priscilla Appiah Nyarko, it's my Birthday and I'd to receive all Birthday messages and Wishes through. Kindly take some time to and fill out this form on this Blog. Thanks with regards...</p>
+  </i>
+  <div class="container" style="float: left; margin-right: 30%;">
+   <a href="/articles/new" class="btn btn-success" style="font-size: 130%;">New Messages</a>
+
+    <% articles.forEach(article => { %>
+      <div class="card mt-4">
+        <div class="card-body" style="background-color: rgb(5, 75, 75);">
+          <h4 class="card-title"><span style="color: #eebc17;">FROM : </span><%= article.title %></h4>
+          <div class="card-subtitle text-muted mb-2" style="color: darkgoldenrod;">
+            <i style="color: rgb(243, 58, 33);"><%= article.createdAt %></i>
+          </div>
+          <div class="card-text mb-2" "><span style="color: #eebc17; font-size: 200%;">Location : </span><span style="color: darkred; font-size: 150%;"><%= article.description %></span></div>
+          <a href="articles/<%= article.slug %>" class="btn btn-primary">Read More</a>
+         
+          <form action="/articles/<%= article.id %>?_method=DELETE" method="POST" class="d-inline">
+            
+          </form>
+        </div>
+      </div>
+    <% }) %>
+  </div>
+</body>
+</html>
